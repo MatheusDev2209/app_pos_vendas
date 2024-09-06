@@ -1,0 +1,52 @@
+{% extends 'usuarios/base.html' %}
+
+    {% block titulo %}
+            Clientes         
+    {% endblock %}
+
+    {% block conteudo %}
+
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    
+                
+        <div class="--bs-body-color">
+    
+                <form  method="post">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                        {{ form.as_p }}
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success btn-md"><i class="bi bi-person-fill-add"></i> Cadastrar</button>
+                    <a class="btn btn-primary" href="{% url 'clientes' %}" role="button"><i class="bi bi-arrow-return-left"></i> Voltar</a>
+                    
+                </form>
+       
+
+    <!-- Incluindo o JavaScript do Bootstrap e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+    {% endblock %}

@@ -1,0 +1,53 @@
+{% extends 'usuarios/base.html' %}
+
+    {% block titulo %}
+            Clientes         
+    {% endblock %}
+                        
+    {% block conteudo %}                   
+                        <div class="card mb-4">
+
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                Tabela de Clientes 
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Sobrenome</th>
+                                            <th>Email</th>
+                                            <th>Senha</th>
+                                            <th>Usuário</th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nome</th>
+                                            <th>Sobrenome</th>
+                                            <th>Email</th>
+                                            <th>Senha</th>
+                                            <th>Usuário</th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        {% for usuario in usuarios %}
+                                        <tr>
+                                            <td>{{usuario.id_usuario}}</td>
+                                            <td>{{usuario.nome}}</td>
+                                            <td>{{usuario.sobrenome}}</td>
+                                            <td>{{usuario.email}}</td>
+                                            <td>{{usuario.senha}}</td>
+                                            <td>{{usuario.usuario}}</td>
+                                        </tr>
+                                        {% endfor %}
+                                       
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+    {% endblock %}           

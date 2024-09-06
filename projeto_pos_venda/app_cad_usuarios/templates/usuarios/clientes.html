@@ -1,0 +1,97 @@
+{% extends 'usuarios/base.html' %}
+
+    {% block titulo %}
+            Clientes         
+    {% endblock %}
+
+    {% block conteudo %}
+
+
+    <style>
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    
+              <!--Tabela de clientes-->    
+        <div class="--bs-body-color">
+    
+                <form  method="post">
+                    {% csrf_token %}
+                    <div class="row g-3">
+                       <!-- <div class="col-md-6">
+                            <label for="">Nome:</label>
+                            {{ form.nome }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Sobrenome:</label>
+                            {{ form.sobrenome }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Email:</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">WhatsApp:</label>
+                            {{ form.wpp }}
+                            <div id="telefoneHelp" class="form-text">Incluir codigo do país ex: +55 e o digito 9</div>
+                        </div>      
+                        <div class="col-12">
+                            <label for="">Observação:</label>
+                            {{ form.obs }}
+                        </div>-->
+
+                   
+                        <br>
+                        
+                        <div class="col-md-6 mb-3">
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Ex: João" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="sobrenome" class="form-label">Sobrenome:</label>
+                            <input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Ex Guilherme" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="email" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="example@email.com" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="telefone" class="form-label">Nº de WhatsApp:</label>
+                            <input type="tel" class="form-control" name="wpp" id="telefone" placeholder="Ex: +55 88 999993131" required>
+                            <div id="telefoneHelp" class="form-text">Incluir codigo do país ex: +55 e o digito 9</div>
+                        </div>
+                        <div class="col-md-12 mb-3">
+                            <label for="endereco" class="form-label">Observações:</label>
+                            <textarea type="text" class="form-control" name="obs" id="endereco" rows="2" placeholder="Digite uma observação, (opcional)"></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-success btn-md"><i class="bi bi-person-fill-add"></i> Cadastrar</button>
+                    <a class="btn btn-primary" href="{% url 'clientes' %}" role="button"><i class="bi bi-arrow-return-left"></i> Voltar</a>
+                    
+                </form>
+       
+
+    <!-- Incluindo o JavaScript do Bootstrap e dependências -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
+
+
+    {% endblock %}
