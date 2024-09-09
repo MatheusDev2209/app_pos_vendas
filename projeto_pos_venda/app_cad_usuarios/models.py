@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 
 #Comando para carregar informações no banco
